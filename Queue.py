@@ -3,7 +3,7 @@
 
 class Queue:
     """
-    Queue: an element first put in queue, and this element first out of queue
+    Queue: an element first en_quequ in queue, and this element first out of queue
     first in, first out
 
     Stack: last in, first out
@@ -21,17 +21,17 @@ class Queue:
         printed = "<" + str(self.entries)[1:-1] + ">"
         return printed
 
-    def put(self, item):
+    def en_queue(self, item):
         self.entries.append(item)
         self.length = self.length + 1
 
-    def get(self):
+    def de_queue(self):
         self.length = self.length - 1
         dequeued = self.entries[self.front]  # 将第一个元素出队
         self.entries = self.entries[1:]
         return dequeued
 
-    def get_front(self):
+    def queue_front(self):
         return self.entries[0]
 
     def size(self):
@@ -40,10 +40,10 @@ class Queue:
 
 if __name__ == '__main__':
     q = Queue()
-    q.put(1)
-    q.put(3)
-    q.put(2)
+    q.en_queue(1)
+    q.en_queue(3)
+    q.en_queue(2)
     print(q)
-    print("出队的元素为 {}". format(q.get()))
+    print("出队的元素为 {}". format(q.de_queue()))
     print("队列的长度为 {}".format(len(q)))
     print("用方法获得队列的元素 {}".format(q.size()))
